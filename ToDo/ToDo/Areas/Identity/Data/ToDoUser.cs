@@ -18,5 +18,7 @@ namespace ToDo.Areas.Identity.Data
         [Column(TypeName = "nvarchar(100)")]
         public String LastName { get; set; }
 
+        public virtual ICollection<UserTask> UserTasks { get; set; }
+
     }
 }

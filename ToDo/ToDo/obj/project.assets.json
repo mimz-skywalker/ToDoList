@@ -9139,11 +9139,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\University, 4th year\\Уеб сървърно програмиране\\ToDo\\ToDo\\ToDo.csproj",
+      "projectUniqueName": "D:\\University, 4th year\\Уеб сървърно програмиране\\ToDoList\\ToDo\\ToDo\\ToDo.csproj",
       "projectName": "ToDo",
-      "projectPath": "D:\\University, 4th year\\Уеб сървърно програмиране\\ToDo\\ToDo\\ToDo.csproj",
+      "projectPath": "D:\\University, 4th year\\Уеб сървърно програмиране\\ToDoList\\ToDo\\ToDo\\ToDo.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\University, 4th year\\Уеб сървърно програмиране\\ToDo\\ToDo\\obj\\",
+      "outputPath": "D:\\University, 4th year\\Уеб сървърно програмиране\\ToDoList\\ToDo\\ToDo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

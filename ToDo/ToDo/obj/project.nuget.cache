@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+emyEBdgQJEFzhf5AnSjhx/gV/z4Ou8QLGL0NiQT/rkUTNj7/tD4u2JzGK2pfZ6NbpGDdw0w2SzEB3eP8q1H0g==",
+  "dgSpecHash": "bUU2QvOw4pXaEWOTqdLR8/If2fN4cobIY5lNjtR2Tx/H9ERHGPKUqyMIWoHMb8+vAxN1BxLWD1Gt2Msc+/hUmw==",
   "success": true,
-  "projectFilePath": "D:\\University, 4th year\\Уеб сървърно програмиране\\ToDo\\ToDo\\ToDo.csproj",
+  "projectFilePath": "D:\\University, 4th year\\Уеб сървърно програмиране\\ToDoList\\ToDo\\ToDo\\ToDo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.10\\microsoft.aspnetcore.cryptography.internal.3.1.10.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.10\\microsoft.aspnetcore.cryptography.keyderivation.3.1.10.nupkg.sha512",

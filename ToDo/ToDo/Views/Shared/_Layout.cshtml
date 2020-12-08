@@ -23,6 +23,18 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["Success"]
+                </div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["Error"]
+                </div>
+            }
         </main>
     </div>
 

@@ -16,7 +16,8 @@ namespace ToDo.Data
         {
         }
 
-    
+        public DbSet<UserTask> Tasks { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

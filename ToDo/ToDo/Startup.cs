@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ToDo.Areas.Identity.Data;
+using ToDo.Data;
 
 namespace ToDo
 {
@@ -26,6 +29,20 @@ namespace ToDo
             services.AddControllersWithViews();
 
             services.AddRazorPages();
+            services.AddDbContext<AuthDbContext>(options => options.UseSqlServer
+            (Configuration.GetConnectionString("AuthDbContextConnection")));
+
+            services.AddDefaultIdentity<ToDoUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = true;
+
+                options.User.RequireUniqueEmail = true;
+                options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+/ ";
+            })
+            .AddEntityFrameworkStores<AuthDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

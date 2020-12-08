@@ -1,8 +1,65 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<ToDo.Areas.Identity.Data.UserTask>
+
+@{
+    ViewData["Title"] = "Add New Task";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>S
+            <th>
+                @Html.DisplayNameFor(model => model.Hour)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hour)
+                </td>
+                <td>
+                    <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary marginless">Edit</a>
+                        <span id="confirmDeleteSpan_@item.Id" style="display: none; margin-left: 1em;">
+                            <span>Сигурни ли сте, че искате да изтриете избраната задача?</span>
+                            <button type="submit" class="btn btn-link">Да</button>
+                            <a href="#" class="btn btn-link" onclick="confirmDelete('@item.Id', false)">Не</a>
+                        </span>
+                        <span id="deleteSpan_@item.Id">
+                            <a class="btn btn-danger marginless" onclick="confirmDelete('@item.Id', true)">Delete</a>
+                        </span>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
